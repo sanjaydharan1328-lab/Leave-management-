@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisation Leave Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Organisation Leave Management</h1>
+        <p>Employee Leave Application Portal</p>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Applications</h3>
+                <p id="totalCount">0</p>
+            </div>
+            <div class="card">
+                <h3>Pending</h3>
+                <p id="pendingCount">0</p>
+            </div>
+            <div class="card">
+                <h3>Approved</h3>
+                <p id="approvedCount">0</p>
+            </div>
+            <div class="card">
+                <h3>Rejected</h3>
+                <p id="rejectedCount">0</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Apply for Leave</h2>
+
+            <form id="leaveForm">
+                <label>Employee Name</label>
+                <input type="text" id="employeeName"
+                       placeholder="Enter your name" required>
+
+                <label>Employee ID</label>
+                <input type="text" id="employeeId"
+                       placeholder="Enter employee ID" required>
+
+                <label>Leave Type</label>
+                <select id="leaveType" required>
+                    <option value="">Select Leave Type</option>
+                    <option value="Casual Leave">Casual Leave</option>
+                    <option value="Medical Leave">Medical Leave</option>
+                </select>
+
+                <label>From Date</label>
+                <input type="date" id="fromDate" required>
+
+                <label>To Date</label>
+                <input type="date" id="toDate" required>
+
+                <label>Reason</label>
+                <textarea id="reason"
+                          placeholder="Enter your reason"
+                          required></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Leave Applications</h2>
+
+            <input type="text" id="searchInput"
+                   placeholder="Search employee name or ID...">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>ID</th>
+                            <th>Leave Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Days</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaveTable">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Organisation Leave Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
