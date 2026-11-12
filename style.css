@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f4f9;
+    color: #333;
+}
+
+header {
+    background: #243b64;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000015;
+}
+
+.card h3 {
+    color: #555;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 30px;
+    color: #243b64;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.form-section,
+.table-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px #00000015;
+}
+
+h2 {
+    color: #243b64;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #243b64;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+#searchInput {
+    margin-bottom: 15px;
+    max-width: 350px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+th, td {
+    padding: 13px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #243b64;
+    color: white;
+}
+
+.status {
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.Pending {
+    background: #fff0c2;
+    color: #9a6700;
+}
+
+.Approved {
+    background: #d4edda;
+    color: #176b35;
+}
+
+.Rejected {
+    background: #f8d7da;
+    color: #a12632;
+}
+
+.approve {
+    background: #218838;
+    margin: 3px;
+}
+
+.reject {
+    background: #dc3545;
+    margin: 3px;
+}
+
+.delete {
+    background: #555;
+    margin: 3px;
+}
+
+footer {
+    text-align: center;
+    background: #243b64;
+    color: white;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 400px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
