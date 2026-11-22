@@ -9,14 +9,27 @@ const app = express();
 
 app.use(express.json());
 
+
+const allowedOrigins = [
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "https://fictional-funicular-97xgpj5pwjv729554-5500.app.github.dev",
+    ...(process.env.FRONTEND_URL || "")
+        .split(",")
+        .map(origin => origin.trim())
+        .filter(Boolean)
+];
+
 app.use(cors({
-    origin: [
-        "http://localhost:5500",
-        "http://127.0.0.1:5500",
-        "https://fictional-funicular-97xgpj5pwjv729554-5500.app.github.dev",
-        "https://leavemanagement-frontend-pi.vercel.app"
-    ]
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("Not allowed by CORS"));
+    }
 }));
+
 
 app.get("/", (req, res) => {
     res.json({ message: "Leave Management API is running" });
