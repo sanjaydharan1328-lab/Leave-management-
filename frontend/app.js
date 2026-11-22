@@ -6,7 +6,7 @@
 // IMPORTANT:
 // Replace this with your Codespaces forwarded
 // backend port 5000 URL before browser testing.
-const API_URL = "https://leave-management-r318.onrender.com/api";cd /workspaces/Leave-management-
+const API_URL = "https://leave-management-r318.onrender.com/api";
 
 
 // ========================================
